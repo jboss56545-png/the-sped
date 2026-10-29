@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="THE SPED COACHING – Prayagraj's premier institute for SSC, Banking, Railway, State Exams & CUET. Expert faculty, mock tests, and proven results. Join a free demo today." />
+  <meta name="keywords" content="SSC coaching Prayagraj, Banking coaching, Railway exams, CUET preparation, Civil Lines coaching" />
+  <title>THE SPED COACHING | Best SSC, Banking, Railway & CUET Coaching in Prayagraj</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#050914', // Deeper, richer dark background
+            'navy-light': '#0f172a',
+            electric: '#3B82F6',
+            'electric-light': '#60A5FA',
+            gold: '#F59E0B',
+            'gold-light': '#FBBF24',
+            accent: '#F97316',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Poppins', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'gradient-x': 'gradient-x 3s ease infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            'gradient-x': {
+              '0%, 100%': {
+                'background-size': '200% 200%',
+                'background-position': 'left center'
+              },
+              '50%': {
+                'background-size': '200% 200%',
+                'background-position': 'right center'
+              },
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #050914; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #3B82F6, #F59E0B); border-radius: 5px; }
+
+    /* Premium Glassmorphism */
+    .glass {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    .glass-card {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Animated Gradient Text */
+    .gradient-text {
+      background: linear-gradient(90deg, #60A5FA, #A78BFA, #FBBF24, #60A5FA);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-x 4s linear infinite;
+    }
+
+    /* Glow effects */
+    .glow-blue { box-shadow: 0 0 40px rgba(59, 130, 246, 0.15); }
+    .glow-gold { box-shadow: 0 0 40px rgba(245, 158, 11, 0.15); }
+    
+    .hover-glow:hover {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      border-color: rgba(96, 165, 250, 0.5);
+    }
+
+    /* Subtle Grid Background */
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    }
+
+    /* Card Gradient Border on Hover */
+    .gradient-border-card {
+      position: relative;
+      background: #0f172a;
+      border-radius: 1.5rem;
+      z-index: 1;
+    }
+    .gradient-border-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 1.55rem;
+      background: linear-gradient(45deg, #3B82F6, #8B5CF6, #F59E0B);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .gradient-border-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Toast Animation */
+    @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+    .toast-enter { animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .toast-exit { animation: slideOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+
+<body class="bg-navy text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-electric selection:text-white">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-electric via-purple-500 to-gold p-[2px] shadow-lg group-hover:scale-105 transition-transform">
+            <div class="w-full h-full bg-navy rounded-[10px] flex items-center justify-center">
+              <span class="font-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-electric to-gold text-xl">TS</span>
+            </div>
+          </div>
+          <div class="leading-tight">
+            <span class="font-display font-bold text-xl tracking-tight text-white">THE SPED</span>
+            <span class="block text-[10px] font-bold tracking-[0.25em] text-gold uppercase mt-0.5">Coaching</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-8 bg-white/5 px-6 py-2 rounded-full border border-white/10 backdrop-blur-md">
+          <a href="#courses" class="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all">Courses</a>
+          <a href="#why-us" class="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all">Why Us</a>
+          <a href="#results" class="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all">Results</a>
+          <a href="#location" class="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all">Location</a>
+          <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all">Contact</a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <a href="#enquiry" class="hidden lg:inline-flex items-center gap-2 bg-white text-navy font-bold text-sm px-6 py-2.5 rounded-full hover:bg-slate-100 transition-all hover:-translate-y-0.5 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+          <i data-lucide="sparkles" class="w-4 h-4 text-gold"></i>
+          Book Free Demo
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle menu" class="lg:hidden p-2 rounded-lg text-slate-300 hover:bg-white/10 transition">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy/95 backdrop-blur-xl border-t border-white/10 absolute w-full">
+      <div class="px-4 py-6 space-y-2">
+        <a href="#courses" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-electric transition">Courses</a>
+        <a href="#why-us" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-electric transition">Why Us</a>
+        <a href="#results" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-electric transition">Results</a>
+        <a href="#location" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-electric transition">Location</a>
+        <a href="#contact" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-electric transition">Contact</a>
+        <a href="#enquiry" class="mobile-link mt-4 flex items-center justify-center gap-2 bg-gradient-to-r from-electric to-gold text-navy font-bold px-5 py-3 rounded-xl shadow-lg">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          Join Free Demo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="home" class="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 -z-10 bg-navy">
+      <div class="absolute inset-0 bg-grid"></div>
+      <!-- Glowing Orbs -->
+      <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-electric/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[150px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+      <div class="absolute top-[40%] left-[40%] w-[300px] h-[300px] bg-gold/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+        
+        <!-- Left Content -->
+        <div class="reveal text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-8 border border-white/10">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
+            </span>
+            <span class="text-xs font-bold tracking-widest text-slate-200 uppercase">Prayagraj's Premier Institute</span>
+          </div>
+
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl xl:text-6xl leading-[1.15] tracking-tight text-white mb-6">
+            Crack <span class="gradient-text">SSC, Banking, Railways</span> & CUET with Top Educators
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
+            Join THE SPED COACHING in Civil Lines, Prayagraj. Get expert mentorship, daily mock tests, and a proven roadmap to government jobs—built for serious aspirants.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
+            <a href="#enquiry" class="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-electric via-blue-600 to-electric text-white font-bold px-8 py-4 rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              <i data-lucide="rocket" class="w-5 h-5"></i>
+              Book Free Demo Class
+            </a>
+            <a href="#courses" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-full transition-all border border-white/10">
+              <i data-lucide="book-open" class="w-5 h-5 text-gold"></i>
+              Explore Courses
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+            <div class="glass-card rounded-2xl p-5 text-center hover:-translate-y-1 transition-transform border-t border-t-white/20">
+              <p class="font-display font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-electric-light to-electric">94%</p>
+              <p class="text-[10px] sm:text-[11px] text-slate-400 mt-1 font-semibold uppercase tracking-wider">Selection Rate</p>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center hover:-translate-y-1 transition-transform border-t border-t-white/20">
+              <p class="font-display font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-gold-light to-gold">15+</p>
+              <p class="text-[10px] sm:text-[11px] text-slate-400 mt-1 font-semibold uppercase tracking-wider">Expert Faculty</p>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center hover:-translate-y-1 transition-transform border-t border-t-white/20">
+              <p class="font-display font-extrabold text-2xl sm:text-3xl text-white">500+</p>
+              <p class="text-[10px] sm:text-[11px] text-slate-400 mt-1 font-semibold uppercase tracking-wider">Mock Tests</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Card -->
+        <div class="reveal hidden lg:block relative animate-float">
+          <div class="absolute inset-0 bg-gradient-to-r from-electric to-gold rounded-[2.5rem] blur-2xl opacity-20"></div>
+          <div class="relative bg-navy-light/80 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 shadow-2xl">
+            <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electric to-purple-600 flex items-center justify-center shadow-lg">
+                <i data-lucide="graduation-cap" class="w-7 h-7 text-white"></i>
+              </div>
+              <div>
+                <p class="font-display font-bold text-white text-lg">Your Success Blueprint</p>
+                <p class="text-xs text-slate-400 mt-1">Structured. Focused. Result-driven.</p>
+              </div>
+            </div>
+
+            <div class="space-y-4 relative">
+              <!-- Connector Line -->
+              <div class="absolute left-6 top-6 bottom-6 w-px bg-white/10 z-0"></div>
+              
+              <div class="relative z-10 flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-white/5">
+                <div class="w-8 h-8 rounded-full bg-navy border-2 border-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-white">Concept-First Teaching</p>
+                  <p class="text-xs text-slate-400 mt-1">Build strong fundamentals, not rote memorization.</p>
+                </div>
+              </div>
+              
+              <div class="relative z-10 flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-white/5">
+                <div class="w-8 h-8 rounded-full bg-navy border-2 border-electric flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-4 h-4 text-electric"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-white">Daily Practice & Doubt Sessions</p>
+                  <p class="text-xs text-slate-400 mt-1">Never stay stuck—get answers the same day.</p>
+                </div>
+              </div>
+              
+              <div class="relative z-10 flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-white/5">
+                <div class="w-8 h-8 rounded-full bg-navy border-2 border-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-4 h-4 text-purple-500"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-white">Performance Analytics</p>
+                  <p class="text-xs text-slate-400 mt-1">Track your progress with detailed mock test reports.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-electric/10 to-purple-600/10 border border-white/10 text-center">
+              <p class="text-sm text-slate-300 font-medium">Trusted by <span class="text-white font-bold">1,000+</span> aspirants across Prayagraj</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COURSES ==================== -->
+  <section id="courses" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-navy-light/30 -z-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block py-1 px-3 rounded-full bg-electric/10 text-electric text-xs font-bold tracking-widest uppercase mb-4 border border-electric/20">Our Programs</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">Courses We Offer</h2>
+        <p class="text-slate-400 text-base sm:text-lg font-light">Targeted coaching for every major government exam—taught by faculty who know the pattern inside out.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- SSC Card -->
+        <article class="reveal gradient-border-card glass-card p-6 group hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electric/20 to-blue-600/10 flex items-center justify-center mb-6 border border-electric/20 group-hover:scale-110 transition-transform">
+            <i data-lucide="landmark" class="w-7 h-7 text-electric"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">SSC CGL / CHSL</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 h-16">Complete coverage of Tier 1 & 2 with quantitative aptitude, reasoning, English, and GK.</p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-white/5 text-slate-300 border border-white/10">Tier 1 & 2</span>
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-gold/10 text-gold border border-gold/20">PYQ Analysis</span>
+          </div>
+        </article>
+
+        <!-- Banking Card -->
+        <article class="reveal gradient-border-card glass-card p-6 group hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/20 to-amber-600/10 flex items-center justify-center mb-6 border border-gold/20 group-hover:scale-110 transition-transform">
+            <i data-lucide="banknote" class="w-7 h-7 text-gold"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Banking (IBPS / SBI)</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 h-16">PO & Clerk preparation with speed-building drills and high-level DI practice.</p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-gold/10 text-gold border border-gold/20">PO & Clerk</span>
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-white/5 text-slate-300 border border-white/10">Speed Tests</span>
+          </div>
+        </article>
+
+        <!-- Railway Card -->
+        <article class="reveal gradient-border-card glass-card p-6 group hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-600/10 flex items-center justify-center mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
+            <i data-lucide="train-front" class="w-7 h-7 text-purple-400"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Railway NTPC / Group D</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 h-16">CBT 1 & 2 focused batches with special emphasis on general awareness and maths.</p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">CBT 1 & 2</span>
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-white/5 text-slate-300 border border-white/10">Daily Quiz</span>
+          </div>
+        </article>
+
+        <!-- CUET Card -->
+        <article class="reveal gradient-border-card glass-card p-6 group hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-teal-600/10 flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+            <i data-lucide="university" class="w-7 h-7 text-cyan-400"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">CUET Preparation</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 h-16">Domain-specific coaching with general test practice for top central universities.</p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Domain + General</span>
+            <span class="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-white/5 text-slate-300 border border-white/10">NCERT Based</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- State Exams Banner -->
+      <div class="reveal mt-8 relative overflow-hidden rounded-3xl bg-gradient-to-r from-navy-light to-navy border border-white/10 p-1">
+        <div class="absolute inset-0 bg-gradient-to-r from-electric/20 via-transparent to-gold/20 opacity-50"></div>
+        <div class="relative bg-navy/80 backdrop-blur-sm rounded-[22px] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric to-gold flex items-center justify-center flex-shrink-0 shadow-lg shadow-electric/20">
+              <i data-lucide="map-pinned" class="w-8 h-8 text-white"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-white text-xl mb-1">State Government Exams</h3>
+              <p class="text-sm text-slate-400">UPSSSC, UPPSC, and other state-level exams—complete syllabus coverage with current affairs.</p>
+            </div>
+          </div>
+          <a href="#enquiry" class="flex-shrink-0 inline-flex items-center gap-2 text-sm font-bold text-navy bg-white px-6 py-3.5 rounded-full hover:bg-slate-100 hover:scale-105 transition-all">
+            Get Details
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY US ==================== -->
+  <section id="why-us" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block py-1 px-3 rounded-full bg-gold/10 text-gold text-xs font-bold tracking-widest uppercase mb-4 border border-gold/20">The Sped Advantage</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">Why Choose Us</h2>
+        <p class="text-slate-400 text-base sm:text-lg font-light">We don’t just teach—we build exam-ready aspirants with a system that works.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal glass-card rounded-3xl p-8 border border-white/5 hover:border-electric/30 transition-colors group">
+          <div class="w-14 h-14 rounded-2xl bg-electric/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="users" class="w-7 h-7 text-electric"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-lg mb-3">Expert Mentorship</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Learn from faculty with 10+ years of experience and a track record of producing toppers.</p>
+        </div>
+
+        <div class="reveal glass-card rounded-3xl p-8 border border-white/5 hover:border-gold/30 transition-colors group">
+          <div class="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="clipboard-check" class="w-7 h-7 text-gold"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-lg mb-3">Regular Mock Tests</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Weekly full-length tests with real exam interface and detailed performance analysis.</p>
+        </div>
+
+        <div class="reveal glass-card rounded-3xl p-8 border border-white/5 hover:border-purple-500/30 transition-colors group">
+          <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="message-circle-question" class="w-7 h-7 text-purple-400"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-lg mb-3">Doubt Clearing Sessions</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Dedicated daily slots—no student leaves with an unanswered question.</p>
+        </div>
+
+        <div class="reveal glass-card rounded-3xl p-8 border border-white/5 hover:border-cyan-500/30 transition-colors group">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="book-marked" class="w-7 h-7 text-cyan-400"></i>
+          </div>
+          <h3 class="font-display font-bold text-white text-lg mb-3">Updated Study Material</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Curated notes, current affairs magazines, and practice sets updated every month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESULTS ==================== -->
+  <section id="results" class="py-24 bg-navy-light/30 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block py-1 px-3 rounded-full bg-electric/10 text-electric text-xs font-bold tracking-widest uppercase mb-4 border border-electric/20">Real Results</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">Aspirants Who Trusted Us</h2>
+        <p class="text-slate-400 text-base sm:text-lg font-light">Our students’ success stories speak louder than any promise.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="reveal glass-card rounded-3xl p-8 border border-white/5 relative group hover:-translate-y-1 transition-transform">
+          <i data-lucide="quote" class="absolute top-6 right-6 w-10 h-10 text-white/5 group-hover:text-electric/10 transition-colors"></i>
+          <div class="flex gap-1 mb-6">
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-8 relative z-10">"The faculty at THE SPED COACHING focuses on building concepts, not just rote learning. The daily practice sheets and mock tests helped me improve my score significantly."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-electric to-purple-600 p-[2px]">
+              <div class="w-full h-full bg-navy rounded-full flex items-center justify-center font-bold text-white">A</div>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Aditya S.</p>
+              <p class="text-xs text-slate-500 font-medium">SSC CGL Aspirant</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="reveal glass-card rounded-3xl p-8 border border-white/5 relative group hover:-translate-y-1 transition-transform">
+          <i data-lucide="quote" class="absolute top-6 right-6 w-10 h-10 text-white/5 group-hover:text-gold/10 transition-colors"></i>
+          <div class="flex gap-1 mb-6">
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-8 relative z-10">"The teachers explain every concept so clearly. I joined for Banking and the speed tests and doubt sessions made a huge difference in my preparation."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold to-amber-600 p-[2px]">
+              <div class="w-full h-full bg-navy rounded-full flex items-center justify-center font-bold text-white">P</div>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Priya M.</p>
+              <p class="text-xs text-slate-500 font-medium">IBPS PO Aspirant</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="reveal glass-card rounded-3xl p-8 border border-white/5 relative group hover:-translate-y-1 transition-transform">
+          <i data-lucide="quote" class="absolute top-6 right-6 w-10 h-10 text-white/5 group-hover:text-cyan-500/10 transition-colors"></i>
+          <div class="flex gap-1 mb-6">
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-8 relative z-10">"Best coaching in Civil Lines for Railway exams. The study material is comprehensive and the mock tests are very close to the actual exam pattern."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 p-[2px]">
+              <div class="w-full h-full bg-navy rounded-full flex items-center justify-center font-bold text-white">R</div>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Rahul K.</p>
+              <p class="text-xs text-slate-500 font-medium">Railway NTPC Aspirant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOCATION & CONTACT ==================== -->
+  <section id="location" class="py-24 relative">
+    <!-- Background Glow -->
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-electric/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        
+        <!-- Address & Map -->
+        <div class="reveal">
+          <span class="inline-block py-1 px-3 rounded-full bg-gold/10 text-gold text-xs font-bold tracking-widest uppercase mb-4 border border-gold/20">Visit Us</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-8">Find Us in Civil Lines</h2>
+
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 mb-8">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electric/20 to-blue-600/10 flex items-center justify-center flex-shrink-0 border border-electric/20">
+                <i data-lucide="map-pin" class="w-7 h-7 text-electric"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-white text-xl mb-3">THE SPED COACHING</h3>
+                <p class="text-sm text-slate-300 leading-relaxed font-light">
+                  Mac Tower Building, Sardar Patel Marg,<br />
+                  opposite Hotel Yalik, Agnipath Colony,<br />
+                  Civil Lines, Prayagraj, Uttar Pradesh 211001
+                </p>
+                <div class="flex flex-wrap gap-4 mt-5">
+                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-gold bg-gold/10 px-3 py-1.5 rounded-lg border border-gold/20">
+                    <i data-lucide="clock" class="w-4 h-4"></i> Mon–Sat: 7 AM – 7 PM
+                  </span>
+                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-electric bg-electric/10 px-3 py-1.5 rounded-lg border border-electric/20">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> Sun: 10 AM – 2 PM
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Embed -->
+          <div class="rounded-3xl overflow-hidden border border-white/10 h-72 relative group">
+            <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+            <iframe
+              title="THE SPED COACHING Location Map"
+              src="https://www.google.com/maps?q=Mac+Tower+Building,+Sardar+Patel+Marg,+Civil+Lines,+Prayagraj,+Uttar+Pradesh+211001&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(1.2);"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Enquiry Form -->
+        <div id="enquiry" class="reveal relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-electric to-gold rounded-[2.5rem] blur-xl opacity-20"></div>
+          <div class="glass rounded-[2rem] p-8 sm:p-10 border border-white/10 relative shadow-2xl">
+            <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electric to-gold flex items-center justify-center shadow-lg shadow-electric/20">
+                <i data-lucide="send" class="w-7 h-7 text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-white text-xl">Admission Enquiry</h3>
+                <p class="text-xs text-slate-400 mt-1">Fill the form & our team will call you back.</p>
+              </div>
+            </div>
+
+            <form id="enquiry-form" class="space-y-5">
+              <div>
+                <label for="name" class="block text-xs font-semibold text-slate-300 mb-2 ml-1">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name"
+                  class="w-full bg-navy-light/50 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/30 transition" />
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-semibold text-slate-300 mb-2 ml-1">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number"
+                  class="w-full bg-navy-light/50 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/30 transition" />
+              </div>
+              <div>
+                <label for="course" class="block text-xs font-semibold text-slate-300 mb-2 ml-1">Interested Course</label>
+                <select id="course" name="course" required
+                  class="w-full bg-navy-light/50 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/30 transition appearance-none cursor-pointer">
+                  <option value="" disabled selected class="text-slate-500">Select a course</option>
+                  <option value="SSC CGL/CHSL">SSC CGL / CHSL</option>
+                  <option value="Banking (IBPS/SBI)">Banking (IBPS / SBI)</option>
+                  <option value="Railway NTPC/Group D">Railway NTPC / Group D</option>
+                  <option value="CUET">CUET Preparation</option>
+                  <option value="State Exams">State Government Exams</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-xs font-semibold text-slate-300 mb-2 ml-1">Message (Optional)</label>
+                <textarea id="message" name="message" rows="3" placeholder="Any specific query?"
+                  class="w-full bg-navy-light/50 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/30 transition resize-none"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-electric via-blue-600 to-electric text-white font-bold px-6 py-4 rounded-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all hover:-translate-y-0.5 mt-2">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                Submit Enquiry
+              </button>
+              <p class="text-[10px] text-slate-500 text-center flex items-center justify-center gap-1">
+                <i data-lucide="shield-check" class="w-3 h-3"></i> Your details are safe. We’ll never spam you.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT STRIP ==================== -->
+  <section id="contact" class="py-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-electric/10 via-navy to-gold/10 border-y border-white/5"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="reveal flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-center md:text-left">
+          <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Still have questions?</h2>
+          <p class="text-slate-400 text-sm font-light">Call us or visit the center—we’re happy to help you choose the right batch.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+          <a href="tel:+919999999999" class="inline-flex items-center justify-center gap-2 glass hover:bg-white/10 text-white font-semibold px-8 py-3.5 rounded-full transition-all border border-white/10">
+            <i data-lucide="phone" class="w-4 h-4 text-gold"></i>
+            +91 99999 99999
+          </a>
+          <a href="#enquiry" class="inline-flex items-center justify-center gap-2 bg-white text-navy font-bold px-8 py-3.5 rounded-full hover:scale-105 hover:bg-slate-100 transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+            <i data-lucide="message-square" class="w-4 h-4 text-electric"></i>
+            Enquire Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#03060f] pt-20 pb-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-electric to-gold p-[2px]">
+              <div class="w-full h-full bg-[#03060f] rounded-[10px] flex items-center justify-center">
+                <span class="font-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-electric to-gold text-lg">TS</span>
+              </div>
+            </div>
+            <div class="leading-tight">
+              <span class="font-display font-bold text-xl text-white">THE SPED</span>
+              <span class="block text-[10px] font-bold tracking-[0.25em] text-gold uppercase mt-0.5">Coaching</span>
+            </div>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed max-w-sm mb-6 font-light">
+            Prayagraj’s trusted coaching institute for SSC, Banking, Railway, State Exams, and CUET. Building careers with concept-first teaching and relentless practice.
+          </p>
+          <div class="flex gap-3">
+            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full glass hover:bg-electric/20 hover:border-electric/50 flex items-center justify-center transition-all group">
+              <i data-lucide="facebook" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full glass hover:bg-gold/20 hover:border-gold/50 flex items-center justify-center transition-all group">
+              <i data-lucide="instagram" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+            </a>
+            <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full glass hover:bg-red-500/20 hover:border-red-500/50 flex items-center justify-center transition-all group">
+              <i data-lucide="youtube" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+            </a>
+            <a href="#" aria-label="Telegram" class="w-10 h-10 rounded-full glass hover:bg-cyan-500/20 hover:border-cyan-500/50 flex items-center justify-center transition-all group">
+              <i data-lucide="send" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm mb-6 uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#courses" class="text-sm text-slate-400 hover:text-electric hover:translate-x-1 inline-block transition-transform">Courses</a></li>
+            <li><a href="#why-us" class="text-sm text-slate-400 hover:text-electric hover:translate-x-1 inline-block transition-transform">Why Us</a></li>
+            <li><a href="#results" class="text-sm text-slate-400 hover:text-electric hover:translate-x-1 inline-block transition-transform">Results</a></li>
+            <li><a href="#location" class="text-sm text-slate-400 hover:text-electric hover:translate-x-1 inline-block transition-transform">Location</a></li>
+            <li><a href="#enquiry" class="text-sm text-slate-400 hover:text-electric hover:translate-x-1 inline-block transition-transform">Free Demo</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm mb-6 uppercase tracking-wider">Contact</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-gold mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-400 leading-relaxed">Mac Tower Building, Sardar Patel Marg, Civil Lines, Prayagraj – 211001</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-gold flex-shrink-0"></i>
+              <a href="tel:+919999999999" class="text-sm text-slate-400 hover:text-electric transition">+91 99999 99999</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="mail" class="w-4 h-4 text-gold flex-shrink-0"></i>
+              <a href="mailto:info@thespedcoaching.com" class="text-sm text-slate-400 hover:text-electric transition">info@thespedcoaching.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-500 font-light">© <span id="year"></span> THE SPED COACHING. All rights reserved.</p>
+        <p class="text-xs text-slate-500 font-light flex items-center gap-1">Designed for aspirants <i data-lucide="heart" class="w-3 h-3 text-red-500 fill-red-500"></i> built for results.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== TOAST ==================== -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[100] space-y-3"></div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Set current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---------- Mobile Menu ---------- */
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      const toggleMenu = () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.setAttribute('data-lucide', 'menu');
+        } else {
+          icon.setAttribute('data-lucide', 'x');
+        }
+        lucide.createIcons();
+      };
+
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      }));
+
+      /* ---------- Header Background on Scroll ---------- */
+      const header = document.getElementById('header');
+      const updateHeader = () => {
+        if (window.scrollY > 20) {
+          header.classList.add('bg-navy/80', 'backdrop-blur-xl', 'shadow-lg', 'border-b', 'border-white/5');
+        } else {
+          header.classList.remove('bg-navy/80', 'backdrop-blur-xl', 'shadow-lg', 'border-b', 'border-white/5');
+        }
+      };
+      window.addEventListener('scroll', updateHeader);
+      updateHeader();
+
+      /* ---------- Reveal on Scroll ---------- */
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      /* ---------- Toast Notification ---------- */
+      const toastContainer = document.getElementById('toast-container');
+
+      const showToast = (message, type = 'success') => {
+        const toast = document.createElement('div');
+        const bg = type === 'success' ? 'bg-emerald-500/90' : 'bg-red-500/90';
+        const icon = type === 'success' ? 'check-circle' : 'alert-circle';
+        toast.className = `toast-enter ${bg} text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 text-sm font-medium border border-white/20`;
+        toast.innerHTML = `
+          <i data-lucide="${icon}" class="w-5 h-5 flex-shrink-0"></i>
+          <span>${message}</span>
+        `;
+        toastContainer.appendChild(toast);
+        lucide.createIcons();
+
+        setTimeout(() => {
+          toast.classList.remove('toast-enter');
+          toast.classList.add('toast-exit');
+          setTimeout(() => toast.remove(), 400);
+        }, 4000);
+      };
+
+      /* ---------- Enquiry Form ---------- */
+      const enquiryForm = document.getElementById('enquiry-form');
+
+      enquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const course = document.getElementById('course').value;
+        const message = document.getElementById('message').value.trim();
+
+        // Basic validation
+        if (!name || !phone || !course) {
+          showToast('Please fill in all required fields.', 'error');
+          return;
+        }
+
+        if (!/^\d{10}$/.test(phone)) {
+          showToast('Please enter a valid 10-digit phone number.', 'error');
+          return;
+        }
+
+        // Save to LocalStorage
+        const lead = {
+          id: Date.now(),
+          name,
+          phone,
+          course,
+          message,
+          timestamp: new Date().toISOString()
+        };
+
+        try {
+          const existingLeads = JSON.parse(localStorage.getItem('sped_coaching_leads') || '[]');
+          existingLeads.push(lead);
+          localStorage.setItem('sped_coaching_leads', JSON.stringify(existingLeads));
+        } catch (err) {
+          console.warn('LocalStorage unavailable:', err);
+        }
+
+        // Success feedback
+        showToast(`Thank you, ${name}! Your enquiry for ${course} has been received. We’ll call you shortly.`, 'success');
+        enquiryForm.reset();
+
+        // Optional: Scroll to top of form
+        document.getElementById('enquiry').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      /* ---------- Smooth Scroll for all anchor links ---------- */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const headerOffset = 90; // Adjusted for taller header
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+          </html>
